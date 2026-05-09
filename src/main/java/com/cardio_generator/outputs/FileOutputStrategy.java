@@ -7,6 +7,11 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * An {@link OutputStrategy} implementation that outputs patient data to files.
+ * The {@code FileOutputStrategy} class is responsible for printing patien related data
+ * to a file on a given base directory.
+ */
 public class FileOutputStrategy implements OutputStrategy {
 
     // Changed variable name to lowerCamelCase
@@ -15,11 +20,25 @@ public class FileOutputStrategy implements OutputStrategy {
     // Changed variable name to lowerCamelCase, also made it private for encapsulation
     private final ConcurrentHashMap<String, String> fileMap = new ConcurrentHashMap<>();
 
+    /**
+     * Constructs a new {@code FileOutputStrategy}.
+     *
+     * @param baseDirectory the directory where output files will be created.
+     */
     public FileOutputStrategy(String baseDirectory) {
 
         this.baseDirectory = baseDirectory;
     }
 
+    /**
+     * Writes patient data to the given file.
+     * Creates the directory if it isn't already initialized.
+     *
+     * @param patientId identifier of a patient.
+     * @param timestamp the time at which the data was generated.
+     * @param label a label indicating the type of data.
+     * @param data the actual data value as a string.
+     */
     @Override
     public void output(int patientId, long timestamp, String label, String data) {
 
