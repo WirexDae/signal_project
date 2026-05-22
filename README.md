@@ -41,24 +41,43 @@ The Cardio Data Simulator is a Java-based application designed to simulate real-
 
 ### Running the Simulator
 
-After packaging, you can run the simulator directly from the executable JAR:
+After building the project, you can run the simulator using the packaged JAR:
 
 ```sh
-java -jar target/cardio_generator-1.0-SNAPSHOT.jar
-```
-
-To run with specific options (e.g., to set the patient count and choose an output strategy):
-
+mvn clean package
+  ```
+The executable JAR will be available in:
 ```sh
-java -jar target/cardio_generator-1.0-SNAPSHOT.jar --patient-count 100 --output file:./output
+bin/6402932_cardio_data_simulator.jar
+ ```
+Run it using:
+```sh
+java -jar bin/6402932_cardio_data_simulator.jar
+ ```
+You can also pass runtime options:
+```sh
+java -jar bin/6402932_cardio_data_simulator.jar --patient-count
+100 --output file:./output
 ```
-
 ### Supported Output Options
 
 - `console`: Directly prints the simulated data to the console.
 - `file:<directory>`: Saves the simulated data to files within the specified directory.
 - `websocket:<port>`: Streams the simulated data to WebSocket clients connected to the specified port.
 - `tcp:<port>`: Streams the simulated data to TCP clients connected to the specified port.
+
+## UML Models
+
+This repository includes UML class diagrams and their relative explanations for the Cardiovascular Health Monitoring System (CHMS).
+
+Location:
+- `/uml_models`
+
+Subsystems modeled:
+1. Alert Generation System
+2. Data Storage System
+3. Patient Identification System
+4. Data Access Layer
 
 ## License
 
