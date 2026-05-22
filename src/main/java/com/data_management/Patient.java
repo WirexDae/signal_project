@@ -55,4 +55,9 @@ public class Patient {
         // TODO Implement and test this method
         return patientRecords;
     }
+
+    // Patiend Id getter
+    public int getPatientId() {
+        return patientId;
+    }
 }
