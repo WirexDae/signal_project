@@ -79,6 +79,12 @@ Subsystems modeled:
 3. Patient Identification System
 4. Data Access Layer
 
+## Part 3 Additions
+
+Implemented:
+- FileDataReader for parsing simulator output files
+- AlertGenerator logic for medical alerts
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
